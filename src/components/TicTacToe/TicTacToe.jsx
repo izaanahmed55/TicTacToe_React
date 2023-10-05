@@ -7,6 +7,9 @@ let data = ["", "", "", "", "", "", "", "", ""]
 
 const TicTacToe = () => {
 
+    let [crossWinCount, setCrossWinCount] = useState(0)
+    let [circleWinCount, setCircleWinCount] = useState(0)
+
     let [count, setCount] = useState(0)
     let [lock, setLock] = useState(false)
     let titleRef = useRef(null)
@@ -69,8 +72,10 @@ const TicTacToe = () => {
         setLock(true)
         if(winner == "x"){
             titleRef.current.innerHTML = `Congratulations: <img src=${cross_icon}> wins`;
+            setCrossWinCount(crossWinCount + 1)
         } else {
             titleRef.current.innerHTML = `Congratulations: <img src=${circle_icon}> wins`;
+            setCircleWinCount(circleWinCount + 1)
         } 
     }
 
@@ -86,6 +91,7 @@ const TicTacToe = () => {
   return (
     <div className="container">
         <h1 className="title" ref={titleRef}> Tic Tac Toe <span> Game </span> </h1>
+        <p> Cross: {crossWinCount} | Circle: {circleWinCount} </p>
         <div className="board">
             <div className="row1">
                 <div className="boxes" ref={box1} onClick={(e)=>{toggle(e,0)}}></div>
