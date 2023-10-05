@@ -48,5 +48,9 @@
 }
 
 .boxes img {
-    margin: 30px;
+    margin: 50px;
+}
+
+.title img {
+    height: 60px;
 }
