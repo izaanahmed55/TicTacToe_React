@@ -91,7 +91,7 @@ const TicTacToe = () => {
   return (
     <div className="container">
         <h1 className="title" ref={titleRef}> Tic Tac Toe <span> Game </span> </h1>
-        <p> Cross: {crossWinCount} | Circle: {circleWinCount} </p>
+        <p className="wins_count"> Cross: {crossWinCount} | Circle: {circleWinCount} </p>
         <div className="board">
             <div className="row1">
                 <div className="boxes" ref={box1} onClick={(e)=>{toggle(e,0)}}></div>

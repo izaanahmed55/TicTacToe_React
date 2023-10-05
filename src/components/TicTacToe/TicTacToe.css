@@ -54,3 +54,9 @@
 .title img {
     height: 60px;
 }
+
+.wins_count {
+    color: white;
+    font-weight: 500;
+
+}
